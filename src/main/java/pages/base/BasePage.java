@@ -26,11 +26,17 @@ public class BasePage {
 //    public SelenideElement tableCartList = $(By.className("cart_list"));
     public SelenideElement linkwelcomeMessage = $(By.id("welcome"));
     public SelenideElement linkLogout = $(byText("Logout"));
+    public SelenideElement adminLink = $(By.className("firstLevelMenu"));
+    public SelenideElement buttonAddSystemUser = $("input[name='btnAdd']");
+    public SelenideElement linkJob = $("a[id='menu_admin_Job']");
+    public SelenideElement linkJobTitle = $("a[id='menu_admin_viewJobTitleList']");
 
 
     //    public SelenideElement itemTotal = $(By.className("summary_subtotal_label"));
     public SelenideElement welcomeMessage = $(By.id("welcome"));
     public SelenideElement loginPanelMessage = $(By.id("logInPanelHeading"));
+    public SelenideElement jobTitleslMessage = $(By.className("head"));
+
 //    public SelenideElement welcomeMessageInCart = $(By.className("title"));
 //    public SelenideElement welcomeMessageYourInformation = $(By.className("title"));
 //    public SelenideElement welcomeMessageOverview = $(By.className("title"));
@@ -104,6 +110,22 @@ public class BasePage {
     public void linkLogout() {
         linkLogout.click();
     }
+
+    public void adminLink() {
+        adminLink.click();
+    }
+    public void buttonAddSystemUser() {
+        buttonAddSystemUser.click();
+    }
+
+    public void linkJob() {
+        linkJob.click();
+    }
+    public void linkJobTitle() {
+        linkJobTitle.click();
+        jobTitleslMessage.shouldBe(text("Job Titles"));
+
+    }
 //
 //
 //    public void buttonNotRemove() {
@@ -118,6 +140,7 @@ public class BasePage {
     public void loginPanelMessage() {
         loginPanelMessage.shouldBe(text("LOGIN Panel"));
     }
+
 
 //    public void welcomeMessageInCart() {
 //        welcomeMessageInCart.shouldBe(text("YOUR CART"));
