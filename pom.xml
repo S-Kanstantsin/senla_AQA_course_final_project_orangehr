@@ -52,6 +52,16 @@
             <scope>test</scope>
         </dependency>
 
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.junit.platform/junit-platform-runner &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.junit.platform</groupId>-->
+<!--            <artifactId>junit-platform-runner</artifactId>-->
+<!--            <version>1.7.2</version>-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
+
+
+
         <!--logger-->
         <dependency>
             <groupId>log4j</groupId>
@@ -77,6 +87,12 @@
             <artifactId>selenide</artifactId>
             <version>5.23.0</version>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.junit.platform</groupId>-->
+<!--            <artifactId>junit-platform-suite-api</artifactId>-->
+<!--            <version>1.7.1</version>-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
     </dependencies>
 
     <build>

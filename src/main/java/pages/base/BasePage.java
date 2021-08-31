@@ -30,7 +30,8 @@ public class BasePage {
     public SelenideElement buttonAddSystemUser = $("input[name='btnAdd']");
     public SelenideElement linkJob = $("a[id='menu_admin_Job']");
     public SelenideElement linkJobTitle = $("a[id='menu_admin_viewJobTitleList']");
-
+    public SelenideElement linkRecruitment = $("a[id= 'menu_recruitment_viewRecruitmentModule']");
+    public SelenideElement linkCandidates = $("a[id= 'menu_recruitment_viewCandidates']");
 
     //    public SelenideElement itemTotal = $(By.className("summary_subtotal_label"));
     public SelenideElement welcomeMessage = $(By.id("welcome"));
@@ -121,6 +122,11 @@ public class BasePage {
     public void linkJob() {
         linkJob.click();
     }
+
+    public void pathToCandidates() {
+        linkRecruitment.click();
+        linkCandidates.click();
+    }
     public void linkJobTitle() {
         linkJobTitle.click();
         jobTitleslMessage.shouldBe(text("Job Titles"));
@@ -135,7 +141,7 @@ public class BasePage {
 //
 
     public void welcomeMessage() {
-        welcomeMessage.shouldBe(text("Welcome Paul"));
+        welcomeMessage.shouldBe(text("Welcome "));
     }
     public void loginPanelMessage() {
         loginPanelMessage.shouldBe(text("LOGIN Panel"));

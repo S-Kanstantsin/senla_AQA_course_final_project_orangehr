@@ -18,12 +18,14 @@ public class JobTitleTest {
         loginPage.adminLink();
         jobsTitlePage.linkJob();
         jobsTitlePage.linkJobTitle();
+//        jobsTitlePage.dellAllJob();
         jobsTitlePage.buttonAddJobTitle();
         jobsTitlePage.addJobTitleFirst();
         jobsTitlePage.buttonAddJobTitle();
         jobsTitlePage.addJobTitleSecond();
         jobsTitlePage.buttonAddJobTitle();
         jobsTitlePage.addJobTitleThird();
+        jobsTitlePage.checboxAddJobTitle();
     }
 
 }

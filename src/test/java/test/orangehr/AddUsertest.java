@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class AddUsertest extends BasesTest {
     @Test
-    public void AddUserTest() throws IOException {
+    public void addUserTest() throws IOException {
         LoginPage loginPage = new LoginPage();
         AddUser addUser = new AddUser();
         loginPage.openLoginPage();
