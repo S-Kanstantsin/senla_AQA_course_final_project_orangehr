@@ -4,10 +4,11 @@ import org.junit.jupiter.api.Test;
 import pages.orangehr.AddUser;
 import pages.orangehr.JobTitlePage;
 import pages.orangehr.LoginPage;
+import test.base.BasesTest;
 
 import java.io.IOException;
 
-public class JobTitleTest {
+public class JobTitleTest extends BasesTest {
     @Test
     public void addJobTitleTest() throws IOException {
         LoginPage loginPage = new LoginPage();
