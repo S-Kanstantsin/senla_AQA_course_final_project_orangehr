@@ -10,6 +10,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -23,7 +24,7 @@ public class AddUser extends BasePage {
     SelenideElement passwordAddUser = $(By.id("systemUser_password"));
     SelenideElement confirmPasswordAddUser = $(By.id("systemUser_confirmPassword"));
     SelenideElement saveButtonAddUser = $(By.id("btnSave"));
-
+    SelenideElement tableAddUser = $("table[id='resultTable']");
 
     public void addUser() throws IOException {
         Properties props = new Properties();
@@ -36,6 +37,7 @@ public class AddUser extends BasePage {
         confirmPasswordAddUser.sendKeys(props.getProperty("new_user.password"));
         Selenide.sleep(2000);
         saveButtonAddUser.shouldBe(visible).click();
+        tableAddUser.shouldBe(text("AlexxGun"));
     }
 
 //    public void openLoginPage(){
