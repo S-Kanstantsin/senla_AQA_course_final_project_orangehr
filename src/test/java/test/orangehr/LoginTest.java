@@ -6,10 +6,19 @@ import test.base.BasesTest;
 
 import java.io.IOException;
 
-public class loginOut extends BasesTest {
+public class LoginTest extends BasesTest {
 
     @Test
-    public void loginOut() throws IOException {
+    public void loginInTest() throws IOException {
+        LoginPage loginPage = new LoginPage();
+        loginPage.openLoginPage();
+        loginPage.login();
+        loginPage.welcomeMessage();
+    }
+
+
+    @Test
+    public void loginOutTest() throws IOException {
         LoginPage loginPage = new LoginPage();
         loginPage.openLoginPage();
         loginPage.login();
@@ -18,6 +27,4 @@ public class loginOut extends BasesTest {
         loginPage.linkLogout();
         loginPage.loginPanelMessage();
     }
-
-
 }

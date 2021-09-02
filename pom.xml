@@ -171,8 +171,8 @@
 <!--</project>-->
 
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
+        <maven.compiler.source>15</maven.compiler.source>
+        <maven.compiler.target>15</maven.compiler.target>
         <jupiter-params.version>5.7.1</jupiter-params.version>
         <jupiter-engine.version>5.7.1</jupiter-engine.version>
         <jupiter-api.version>5.7.1</jupiter-api.version>
@@ -215,7 +215,7 @@
                     <dependency>
                         <groupId>org.aspectj</groupId>
                         <artifactId>aspectjweaver</artifactId>
-                        <version>1.8.10</version>
+                        <version>${aspectj.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>
