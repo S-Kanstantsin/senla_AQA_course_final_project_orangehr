@@ -15,8 +15,8 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <maven.compiler.source>15</maven.compiler.source>
-        <maven.compiler.target>15</maven.compiler.target>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
         <jupiter-params.version>5.7.1</jupiter-params.version>
         <jupiter-engine.version>5.7.1</jupiter-engine.version>
         <jupiter-api.version>5.7.1</jupiter-api.version>
