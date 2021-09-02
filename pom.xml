@@ -8,6 +8,9 @@
     <artifactId>senla_AQA_course_final_project_orangehr</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
+    <name>autotest</name>
+    <!--    <url>https://mvnrepository.com</url>-->
+    <url>http://maven.apache.org</url>
 
     <properties>
         <maven.compiler.source>15</maven.compiler.source>
@@ -26,6 +29,7 @@
         <allure-selenide.version>2.14.0</allure-selenide.version>
         <allure-maven.version>2.10.0</allure-maven.version>
     </properties>
+
     <build>
         <plugins>
             <plugin>
@@ -33,7 +37,6 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
                 <configuration>
-
                     <testFailureIgnore>true</testFailureIgnore>
                     <useSystemClassLoader>false</useSystemClassLoader>
                     <argLine>
@@ -152,8 +155,7 @@
 </project>
 
 
-
-<!--<name>autotest</name>-->
+        <!--<name>autotest</name>-->
         <!--    &lt;!&ndash;    <url>https://mvnrepository.com</url>&ndash;&gt;-->
         <!--    <url>http://maven.apache.org</url>-->
 
