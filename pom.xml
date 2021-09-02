@@ -9,177 +9,6 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>autotest</name>
-    <!--    &lt;!&ndash;    <url>https://mvnrepository.com</url>&ndash;&gt;-->
-    <!--    <url>http://maven.apache.org</url>-->
-
-    <!--    <properties>-->
-    <!--        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
-    <!--        <maven.compiler.source>15</maven.compiler.source>-->
-    <!--        <maven.compiler.target>15</maven.compiler.target>-->
-    <!--        <junit.jupiter.version>5.7.1</junit.jupiter.version>-->
-    <!--        <junit.platform.version>1.7.1</junit.platform.version>-->
-    <!--        <jupiter-params.version>5.7.1</jupiter-params.version>-->
-    <!--        <jupiter-engine.version>5.7.1</jupiter-engine.version>-->
-    <!--        &lt;!&ndash;        <jupiter-api.version>5.7.1</jupiter-api.version>&ndash;&gt;-->
-    <!--        <junit-platform.version>1.7.0</junit-platform.version>-->
-    <!--        <selenide.version>5.23.0</selenide.version>-->
-    <!--        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>-->
-    <!--        <junit-platform-surefire-provider.version>1.1.0</junit-platform-surefire-provider.version>-->
-    <!--        <aspectj.version>1.9.6</aspectj.version>-->
-    <!--        <allure-junit5.version>2.14.0</allure-junit5.version>-->
-    <!--        <allure-selenide.version>2.14.0</allure-selenide.version>-->
-    <!--        <allure-maven.version>2.10.0</allure-maven.version>-->
-    <!--    </properties>-->
-
-    <!--    <dependencies>-->
-
-    <!--        &lt;!&ndash; https://mvnrepository.com/artifact/io.qameta.allure/allure-junit5 &ndash;&gt;-->
-    <!--        <dependency>-->
-    <!--            <groupId>io.qameta.allure</groupId>-->
-    <!--            <artifactId>allure-junit5</artifactId>-->
-    <!--            <version>2.10.0</version>-->
-    <!--            <scope>test</scope>-->
-    <!--        </dependency>-->
-
-    <!--        &lt;!&ndash;JUNIT5&ndash;&gt;-->
-    <!--        <dependency>-->
-    <!--            <groupId>org.junit.jupiter</groupId>-->
-    <!--            <artifactId>junit-jupiter-engine</artifactId>-->
-    <!--            <version>5.7.1</version>-->
-    <!--            <scope>test</scope>-->
-    <!--        </dependency>-->
-
-
-    <!--        <dependency>-->
-    <!--            <groupId>org.junit.jupiter</groupId>-->
-    <!--            <artifactId>junit-jupiter-api</artifactId>-->
-    <!--            <version>5.7.1</version>-->
-    <!--            <scope>test</scope>-->
-    <!--        </dependency>-->
-
-    <!--        <dependency>-->
-    <!--            <groupId>org.junit.platform</groupId>-->
-    <!--            <artifactId>junit-platform-launcher</artifactId>-->
-    <!--            <version>1.7.1</version>-->
-    <!--            <scope>test</scope>-->
-    <!--        </dependency>-->
-
-    <!--        &lt;!&ndash;        &lt;!&ndash; https://mvnrepository.com/artifact/org.junit.platform/junit-platform-runner &ndash;&gt;&ndash;&gt;-->
-    <!--        &lt;!&ndash;        <dependency>&ndash;&gt;-->
-    <!--        &lt;!&ndash;            <groupId>org.junit.platform</groupId>&ndash;&gt;-->
-    <!--        &lt;!&ndash;            <artifactId>junit-platform-runner</artifactId>&ndash;&gt;-->
-    <!--        &lt;!&ndash;            <version>1.7.2</version>&ndash;&gt;-->
-    <!--        &lt;!&ndash;            <scope>test</scope>&ndash;&gt;-->
-    <!--        &lt;!&ndash;        </dependency>&ndash;&gt;-->
-
-
-    <!--        &lt;!&ndash;logger&ndash;&gt;-->
-    <!--        <dependency>-->
-    <!--            <groupId>log4j</groupId>-->
-    <!--            <artifactId>log4j</artifactId>-->
-    <!--            <version>1.2.17</version>-->
-    <!--        </dependency>-->
-
-    <!--        &lt;!&ndash;webdrivermanager&ndash;&gt;-->
-    <!--        <dependency>-->
-    <!--            <groupId>io.github.bonigarcia</groupId>-->
-    <!--            <artifactId>webdrivermanager</artifactId>-->
-    <!--            <version>4.4.3</version>-->
-    <!--        </dependency>-->
-    <!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.aspectj/aspectjweaver &ndash;&gt;-->
-    <!--        <dependency>-->
-    <!--            <groupId>org.aspectj</groupId>-->
-    <!--            <artifactId>aspectjweaver</artifactId>-->
-    <!--            <version>1.9.6</version>-->
-    <!--            <scope>runtime</scope>-->
-    <!--        </dependency>-->
-    <!--        <dependency>-->
-    <!--            <groupId>com.codeborne</groupId>-->
-    <!--            <artifactId>selenide</artifactId>-->
-    <!--            <version>5.23.0</version>-->
-    <!--        </dependency>-->
-    <!--        <dependency>-->
-    <!--            <groupId>io.qameta.allure</groupId>-->
-    <!--            <artifactId>allure-java-commons</artifactId>-->
-    <!--            <version>2.13.10</version>-->
-    <!--        </dependency>-->
-    <!--        &lt;!&ndash;        <dependency>&ndash;&gt;-->
-    <!--        &lt;!&ndash;            <groupId>org.junit.platform</groupId>&ndash;&gt;-->
-    <!--        &lt;!&ndash;            <artifactId>junit-platform-suite-api</artifactId>&ndash;&gt;-->
-    <!--        &lt;!&ndash;            <version>1.7.1</version>&ndash;&gt;-->
-    <!--        &lt;!&ndash;            <scope>test</scope>&ndash;&gt;-->
-    <!--        &lt;!&ndash;        </dependency>&ndash;&gt;-->
-    <!--    </dependencies>-->
-
-    <!--    <build>-->
-    <!--        <plugins>-->
-    <!--            <plugin>-->
-    <!--                <groupId>org.apache.maven.plugins</groupId>-->
-    <!--                <artifactId>maven-compiler-plugin</artifactId>-->
-    <!--                <configuration>-->
-    <!--                    <source>15</source>-->
-    <!--                    <target>15</target>-->
-    <!--                </configuration>-->
-    <!--            </plugin>-->
-    <!--            <plugin>-->
-    <!--                <artifactId>maven-surefire-plugin</artifactId>-->
-    <!--                <version>2.21.0</version>-->
-    <!--                <configuration>-->
-    <!--                    <testFailureIgnore>false</testFailureIgnore>-->
-    <!--                    &lt;!&ndash;suppress UnresolvedMavenProperty &ndash;&gt;-->
-    <!--                    <argLine>-->
-    <!--                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/1.9.6/aspectjweaver-1.9.6.jar"-->
-    <!--                    </argLine>-->
-    <!--                    <systemProperties>-->
-    <!--                        <property>-->
-    <!--                            <name>junit.jupiter.extensions.autodetection.enabled</name>-->
-    <!--                            <value>true</value>-->
-    <!--                        </property>-->
-    <!--                    </systemProperties>-->
-    <!--                    <properties>-->
-    <!--                        <property>-->
-    <!--                            <name>listener</name>-->
-    <!--                            <value>io.qameta.allure.junit5.AllureJunit5</value>-->
-    <!--                        </property>-->
-    <!--                    </properties>-->
-    <!--                    <systemProperties>-->
-    <!--                        &lt;!&ndash;                        <property>&ndash;&gt;-->
-    <!--                        &lt;!&ndash;                            <name>allure.results.directory</name>&ndash;&gt;-->
-    <!--                        &lt;!&ndash;                            <value>${project.build.directory}/allure-results</value>&ndash;&gt;-->
-    <!--                        &lt;!&ndash;                        </property>&ndash;&gt;-->
-    <!--                    </systemProperties>-->
-    <!--                </configuration>-->
-    <!--                <dependencies>-->
-    <!--&lt;!&ndash;                    <dependency>&ndash;&gt;-->
-    <!--&lt;!&ndash;                        <groupId>org.junit.platform</groupId>&ndash;&gt;-->
-    <!--&lt;!&ndash;                        <artifactId>junit-platform-surefire-provider</artifactId>&ndash;&gt;-->
-    <!--&lt;!&ndash;                        <version>1.1.0</version>&ndash;&gt;-->
-    <!--&lt;!&ndash;                        <scope>test</scope>&ndash;&gt;-->
-    <!--&lt;!&ndash;                    </dependency>&ndash;&gt;-->
-    <!--                    &lt;!&ndash; https://mvnrepository.com/artifact/org.aspectj/aspectjweaver &ndash;&gt;-->
-    <!--                    <dependency>-->
-    <!--                        <groupId>org.aspectj</groupId>-->
-    <!--                        <artifactId>aspectjweaver</artifactId>-->
-    <!--                        <version>1.9.6</version>-->
-    <!--                        <scope>runtime</scope>-->
-    <!--                    </dependency>-->
-
-    <!--                </dependencies>-->
-    <!--            </plugin>-->
-    <!--            <plugin>-->
-    <!--                <groupId>io.qameta.allure</groupId>-->
-    <!--                <artifactId>allure-maven</artifactId>-->
-    <!--                <version>2.10.0</version>-->
-    <!--                &lt;!&ndash;                <configuration>&ndash;&gt;-->
-    <!--                &lt;!&ndash;                    <reportVersion>2.4.1</reportVersion>&ndash;&gt;-->
-    <!--                &lt;!&ndash;                </configuration>&ndash;&gt;-->
-    <!--            </plugin>-->
-    <!--        </plugins>-->
-    <!--    </build>-->
-
-    <!--</project>-->
-
     <properties>
         <maven.compiler.source>15</maven.compiler.source>
         <maven.compiler.target>15</maven.compiler.target>
@@ -204,6 +33,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
                 <configuration>
+
                     <testFailureIgnore>true</testFailureIgnore>
                     <useSystemClassLoader>false</useSystemClassLoader>
                     <argLine>
@@ -320,3 +150,176 @@
     </dependencies>
 
 </project>
+
+
+
+<!--<name>autotest</name>-->
+        <!--    &lt;!&ndash;    <url>https://mvnrepository.com</url>&ndash;&gt;-->
+        <!--    <url>http://maven.apache.org</url>-->
+
+        <!--    <properties>-->
+        <!--        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
+        <!--        <maven.compiler.source>15</maven.compiler.source>-->
+        <!--        <maven.compiler.target>15</maven.compiler.target>-->
+        <!--        <junit.jupiter.version>5.7.1</junit.jupiter.version>-->
+        <!--        <junit.platform.version>1.7.1</junit.platform.version>-->
+        <!--        <jupiter-params.version>5.7.1</jupiter-params.version>-->
+        <!--        <jupiter-engine.version>5.7.1</jupiter-engine.version>-->
+        <!--        &lt;!&ndash;        <jupiter-api.version>5.7.1</jupiter-api.version>&ndash;&gt;-->
+        <!--        <junit-platform.version>1.7.0</junit-platform.version>-->
+        <!--        <selenide.version>5.23.0</selenide.version>-->
+        <!--        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>-->
+        <!--        <junit-platform-surefire-provider.version>1.1.0</junit-platform-surefire-provider.version>-->
+        <!--        <aspectj.version>1.9.6</aspectj.version>-->
+        <!--        <allure-junit5.version>2.14.0</allure-junit5.version>-->
+        <!--        <allure-selenide.version>2.14.0</allure-selenide.version>-->
+        <!--        <allure-maven.version>2.10.0</allure-maven.version>-->
+        <!--    </properties>-->
+
+        <!--    <dependencies>-->
+
+        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/io.qameta.allure/allure-junit5 &ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>io.qameta.allure</groupId>-->
+        <!--            <artifactId>allure-junit5</artifactId>-->
+        <!--            <version>2.10.0</version>-->
+        <!--            <scope>test</scope>-->
+        <!--        </dependency>-->
+
+        <!--        &lt;!&ndash;JUNIT5&ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.junit.jupiter</groupId>-->
+        <!--            <artifactId>junit-jupiter-engine</artifactId>-->
+        <!--            <version>5.7.1</version>-->
+        <!--            <scope>test</scope>-->
+        <!--        </dependency>-->
+
+
+        <!--        <dependency>-->
+        <!--            <groupId>org.junit.jupiter</groupId>-->
+        <!--            <artifactId>junit-jupiter-api</artifactId>-->
+        <!--            <version>5.7.1</version>-->
+        <!--            <scope>test</scope>-->
+        <!--        </dependency>-->
+
+        <!--        <dependency>-->
+        <!--            <groupId>org.junit.platform</groupId>-->
+        <!--            <artifactId>junit-platform-launcher</artifactId>-->
+        <!--            <version>1.7.1</version>-->
+        <!--            <scope>test</scope>-->
+        <!--        </dependency>-->
+
+        <!--        &lt;!&ndash;        &lt;!&ndash; https://mvnrepository.com/artifact/org.junit.platform/junit-platform-runner &ndash;&gt;&ndash;&gt;-->
+        <!--        &lt;!&ndash;        <dependency>&ndash;&gt;-->
+        <!--        &lt;!&ndash;            <groupId>org.junit.platform</groupId>&ndash;&gt;-->
+        <!--        &lt;!&ndash;            <artifactId>junit-platform-runner</artifactId>&ndash;&gt;-->
+        <!--        &lt;!&ndash;            <version>1.7.2</version>&ndash;&gt;-->
+        <!--        &lt;!&ndash;            <scope>test</scope>&ndash;&gt;-->
+        <!--        &lt;!&ndash;        </dependency>&ndash;&gt;-->
+
+
+        <!--        &lt;!&ndash;logger&ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>log4j</groupId>-->
+        <!--            <artifactId>log4j</artifactId>-->
+        <!--            <version>1.2.17</version>-->
+        <!--        </dependency>-->
+
+        <!--        &lt;!&ndash;webdrivermanager&ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>io.github.bonigarcia</groupId>-->
+        <!--            <artifactId>webdrivermanager</artifactId>-->
+        <!--            <version>4.4.3</version>-->
+        <!--        </dependency>-->
+        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.aspectj/aspectjweaver &ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.aspectj</groupId>-->
+        <!--            <artifactId>aspectjweaver</artifactId>-->
+        <!--            <version>1.9.6</version>-->
+        <!--            <scope>runtime</scope>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.codeborne</groupId>-->
+        <!--            <artifactId>selenide</artifactId>-->
+        <!--            <version>5.23.0</version>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>io.qameta.allure</groupId>-->
+        <!--            <artifactId>allure-java-commons</artifactId>-->
+        <!--            <version>2.13.10</version>-->
+        <!--        </dependency>-->
+        <!--        &lt;!&ndash;        <dependency>&ndash;&gt;-->
+        <!--        &lt;!&ndash;            <groupId>org.junit.platform</groupId>&ndash;&gt;-->
+        <!--        &lt;!&ndash;            <artifactId>junit-platform-suite-api</artifactId>&ndash;&gt;-->
+        <!--        &lt;!&ndash;            <version>1.7.1</version>&ndash;&gt;-->
+        <!--        &lt;!&ndash;            <scope>test</scope>&ndash;&gt;-->
+        <!--        &lt;!&ndash;        </dependency>&ndash;&gt;-->
+        <!--    </dependencies>-->
+
+        <!--    <build>-->
+        <!--        <plugins>-->
+        <!--            <plugin>-->
+        <!--                <groupId>org.apache.maven.plugins</groupId>-->
+        <!--                <artifactId>maven-compiler-plugin</artifactId>-->
+        <!--                <configuration>-->
+        <!--                    <source>15</source>-->
+        <!--                    <target>15</target>-->
+        <!--                </configuration>-->
+        <!--            </plugin>-->
+        <!--            <plugin>-->
+        <!--                <artifactId>maven-surefire-plugin</artifactId>-->
+        <!--                <version>2.21.0</version>-->
+        <!--                <configuration>-->
+        <!--                    <testFailureIgnore>false</testFailureIgnore>-->
+        <!--                    &lt;!&ndash;suppress UnresolvedMavenProperty &ndash;&gt;-->
+        <!--                    <argLine>-->
+        <!--                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/1.9.6/aspectjweaver-1.9.6.jar"-->
+        <!--                    </argLine>-->
+        <!--                    <systemProperties>-->
+        <!--                        <property>-->
+        <!--                            <name>junit.jupiter.extensions.autodetection.enabled</name>-->
+        <!--                            <value>true</value>-->
+        <!--                        </property>-->
+        <!--                    </systemProperties>-->
+        <!--                    <properties>-->
+        <!--                        <property>-->
+        <!--                            <name>listener</name>-->
+        <!--                            <value>io.qameta.allure.junit5.AllureJunit5</value>-->
+        <!--                        </property>-->
+        <!--                    </properties>-->
+        <!--                    <systemProperties>-->
+        <!--                        &lt;!&ndash;                        <property>&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                            <name>allure.results.directory</name>&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                            <value>${project.build.directory}/allure-results</value>&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                        </property>&ndash;&gt;-->
+        <!--                    </systemProperties>-->
+        <!--                </configuration>-->
+        <!--                <dependencies>-->
+        <!--&lt;!&ndash;                    <dependency>&ndash;&gt;-->
+        <!--&lt;!&ndash;                        <groupId>org.junit.platform</groupId>&ndash;&gt;-->
+        <!--&lt;!&ndash;                        <artifactId>junit-platform-surefire-provider</artifactId>&ndash;&gt;-->
+        <!--&lt;!&ndash;                        <version>1.1.0</version>&ndash;&gt;-->
+        <!--&lt;!&ndash;                        <scope>test</scope>&ndash;&gt;-->
+        <!--&lt;!&ndash;                    </dependency>&ndash;&gt;-->
+        <!--                    &lt;!&ndash; https://mvnrepository.com/artifact/org.aspectj/aspectjweaver &ndash;&gt;-->
+        <!--                    <dependency>-->
+        <!--                        <groupId>org.aspectj</groupId>-->
+        <!--                        <artifactId>aspectjweaver</artifactId>-->
+        <!--                        <version>1.9.6</version>-->
+        <!--                        <scope>runtime</scope>-->
+        <!--                    </dependency>-->
+
+        <!--                </dependencies>-->
+        <!--            </plugin>-->
+        <!--            <plugin>-->
+        <!--                <groupId>io.qameta.allure</groupId>-->
+        <!--                <artifactId>allure-maven</artifactId>-->
+        <!--                <version>2.10.0</version>-->
+        <!--                &lt;!&ndash;                <configuration>&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    <reportVersion>2.4.1</reportVersion>&ndash;&gt;-->
+        <!--                &lt;!&ndash;                </configuration>&ndash;&gt;-->
+        <!--            </plugin>-->
+        <!--        </plugins>-->
+        <!--    </build>-->
+
+        <!--</project>-->
