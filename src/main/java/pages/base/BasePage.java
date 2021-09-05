@@ -36,7 +36,6 @@ public class BasePage {
     public SelenideElement linkAssignLeave = $("a[id= 'menu_leave_assignLeave']");
 
 
-
     //    public SelenideElement itemTotal = $(By.className("summary_subtotal_label"));
     public SelenideElement welcomeMessage = $(By.id("welcome"));
     public SelenideElement loginPanelMessage = $(By.id("logInPanelHeading"));
@@ -120,6 +119,7 @@ public class BasePage {
     public void adminLink() {
         adminLink.click();
     }
+
     public void buttonAddSystemUser() {
         buttonAddSystemUser.click();
     }
@@ -132,11 +132,13 @@ public class BasePage {
         linkRecruitment.click();
         linkCandidates.click();
     }
+
     public void linkJobTitle() {
         linkJobTitle.click();
         jobTitleslMessage.shouldBe(text("Job Titles"));
 
     }
+
     public void linkAssignLeave() {
         linkLeave.click();
         linkAssignLeave.click();
@@ -153,14 +155,30 @@ public class BasePage {
     public void welcomeMessage() {
         welcomeMessage.shouldBe(text("Welcome "));
     }
+
     public void loginPanelMessage() {
         loginPanelMessage.shouldBe(text("LOGIN Panel"));
     }
+
     public void invalidloginMessage() {
         invalidloginMessage.shouldBe(text("Invalid credentials"));
     }
 
 
+
+    public void findElementAndClickBox(String str) {
+        $(By.xpath("//a[contains(text(),\'" + str + "\')]/ancestor::tr/td[1]/input[@type='checkbox']")).click();
+    }
+
+
+    public SelenideElement findElement(String str) {
+        return $(By.xpath("//a[contains(text(),\'" + str + "\')]"));
+    }
+
+
+    public SelenideElement findFourthColumnElement(String str) {
+        return $(By.xpath("//a[contains(text(),\'" + str + "\')]/ancestor::tr/td[4]/a"));
+    }
 //    public void welcomeMessageInCart() {
 //        welcomeMessageInCart.shouldBe(text("YOUR CART"));
 //    }
@@ -187,4 +205,4 @@ public class BasePage {
 //    }
 //
 
-}
+    }
