@@ -1,33 +1,26 @@
 package pages.orangehr;
 
-import com.codeborne.selenide.ElementsCollection;
-import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 import pages.base.BasePage;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
-
-import static com.codeborne.selenide.Condition.selected;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
 public class JobTitlePage extends BasePage {
 
-    private static  String SECONDJBOB = "surgeon" ;
-    private static  String FIRSTJOB ="veterinary doctor" ;
-    private static  String THIRDJOB = "pathologist";
+    public static  String SECONDJBOB  ;
+    public static  String FIRSTJOB ;
+    public static  String THIRDJOB;
     SelenideElement jobTitle = $("input[id='jobTitle_jobTitle']");
     SelenideElement jobDescription = $("textarea[id='jobTitle_jobDescription']");
     SelenideElement jobSpecification = $("input[id='jobTitle_jobSpec']");
     SelenideElement jobNote = $("textarea[id='jobTitle_note']");
     SelenideElement saveButtonAddJobTitle = $("input[name='btnSave']");
     SelenideElement buttonAddJobTitle = $("input[name='btnAdd']");
-    //    SelenideElement checboxAddJobTitle =  $(By.name("chkSelectRow[]"));
-//    SelenideElement checboxAddJobTitle = $(By.id("resultTable"));
     SelenideElement buttonDelJobTitle = $("input[name='btnDelete']");
     SelenideElement checboxAllJobTitle = $("input[id='ohrmList_chkSelectAll']");
     SelenideElement buttonYesDelJobTitle = $("input[id='dialogDeleteBtn']");
@@ -81,10 +74,9 @@ public class JobTitlePage extends BasePage {
     public  void checboxAddJobTitle()  throws IOException {
         Properties props = new Properties();
         props.load(new FileInputStream("src/main/resources/use.properties"));
-
-//        FIRSTJOB = props.getProperty("ob_first.title");
-//        SECONDJBOB = props.getProperty("job_second.title");
-//        THIRDJOB = props.getProperty("job_third.title");
+        FIRSTJOB = props.getProperty("job_first.title");
+        SECONDJBOB = props.getProperty("job_second.title");
+        THIRDJOB = props.getProperty("job_third.title");
         checbAddJobTitle(FIRSTJOB);
         checbAddJobTitle(SECONDJBOB);
         checbAddJobTitle(THIRDJOB);
@@ -95,7 +87,6 @@ public class JobTitlePage extends BasePage {
     public void checbAddJobTitle(String str){
         SelenideElement checboxAddJobTitle = $((By.xpath("//a[contains(text(),\'" + str + "\')]/ancestor::tr/td[1]/input[@type='checkbox']")));
         checboxAddJobTitle.click();
-        Selenide.sleep(2000);
     }
 }
 
