@@ -20,4 +20,15 @@ public class UserTest extends BasesTest {
         loginPage.buttonAddSystemUser();
         addUser.addUser();
     }
+    @Test
+    public void deleteUserTest() throws IOException {
+        LoginPage loginPage = new LoginPage();
+        AddUser deleteUser = new AddUser();
+        loginPage.openLoginPage();
+        loginPage.login();
+        loginPage.welcomeMessage();
+        loginPage.adminLink();
+        deleteUser.deleteUser();
+    }
+
 }

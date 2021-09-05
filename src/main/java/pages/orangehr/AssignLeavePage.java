@@ -1,5 +1,6 @@
 package pages.orangehr;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
@@ -9,8 +10,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 
 public class AssignLeavePage extends BasePage {
@@ -25,11 +25,13 @@ public class AssignLeavePage extends BasePage {
     SelenideElement addToDate = $(By.name("assignleave[txtToDate]"));
 
     SelenideElement addPartialDays = $(By.name("assignleave[partialDays]"));
-    SelenideElement addAllDays = $("option[value='all']");
+    SelenideElement addHalfDays = $("select[id='assignleave_firstDuration_duration']");
+    SelenideElement addTimeOfDay = $("select[id='assignleave_firstDuration_ampm']");
     SelenideElement addComment = $(By.id("assignleave_txtComment"));
+    SelenideElement leave_Balance = $("div[id='assignleave_leaveBalance']");
     SelenideElement assignAssignLeavePage = $(By.id("assignBtn"));
     SelenideElement oKAssignLeavePage = $(By.id("confirmOkButton"));
-    SelenideElement assignLeavelMessage =  $("div[class='head']");
+    SelenideElement assignLeavelMessage = $("div[class='head']");
 
 
     public void addAssignLeave() throws IOException {
@@ -38,30 +40,39 @@ public class AssignLeavePage extends BasePage {
         props.load(new FileInputStream("src/main/resources/use.properties"));
 
         addEmployeeName.sendKeys(props.getProperty("Employee_Name"));
-        addLeaveType.click();
-        addUSPersonal.click();
-//        employeeNameShould.shouldHave(visible.text(props.getProperty("new_user.name")));
+        addEmployeeName.should(exist).setValue(props.getProperty("Employee_Name"));
+
+        addLeaveType.selectOption((props.getProperty("Leave_Type")));
+        addLeaveType.shouldBe(text(props.getProperty("Leave_Type")));
+        Selenide.sleep(3000);
+//        employeeNameShould.shouldHave(visible.text)(props.getProperty("new_user.name")));
         addFromDate.click();
         addFromDate.sendKeys(props.getProperty("From_Date"));
         addFromDate.pressEnter();
+        addFromDate.should(exist).setValue(props.getProperty("From_Date"));
 //        clickToDate.click();
         addToDate.clear();
         addToDate.sendKeys(props.getProperty("To_Date"));
+        addToDate.should(exist).setValue(props.getProperty("To_Date"));
+        addToDate.should(exist).setValue(props.getProperty("To_Date"));
         addToDate.pressEnter();
-
-        addPartialDays.click();
-        addAllDays.click();
+        Selenide.sleep(2000);
+        addPartialDays.shouldBe(visible).selectOption((props.getProperty("partial_Days")));
+        addPartialDays.shouldBe(text(props.getProperty("partial_Days")));
+        Selenide.sleep(2000);
+        addHalfDays.shouldBe(visible).selectOption((props.getProperty("duration_Days")));
+        addHalfDays.shouldBe(text(props.getProperty("duration_Days")));
+        addTimeOfDay.shouldBe(visible).selectOption((props.getProperty("duration_TimeOfDay")));
+        addTimeOfDay.shouldBe(text(props.getProperty("duration_TimeOfDay")));
 
         addComment.sendKeys(props.getProperty("user.Comment"));
+        addComment.should(exist).setValue(props.getProperty("user.Comment"));
         assignAssignLeavePage.shouldBe(visible).click();
-        Selenide.sleep(2000);
-//        oKAssignLeavePage.shouldBe(visible).click();
-//        Selenide.sleep(2000);
+        oKAssignLeavePage.shouldBe(visible).click();
+        leave_Balance.shouldBe(visible.text(props.getProperty("leave_Balance")));
+        assignAssignLeavePage.shouldBe(visible).click();
         assignLeavelMessage.shouldBe(text("Overlapping Leave Requests Found"));
-        Selenide.sleep(2000);
     }
 
-//    public void openLoginPage(){
-//        open("https://opensource-demo.orangehrmlive.com/");
-//    }
+
 }
