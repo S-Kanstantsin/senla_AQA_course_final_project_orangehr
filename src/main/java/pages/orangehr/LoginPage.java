@@ -1,5 +1,6 @@
 package pages.orangehr;
 
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 import pages.base.BasePage;
@@ -23,6 +24,30 @@ public class LoginPage extends BasePage {
         signInButton.shouldBe(visible).click();
     }
 
+    public void invalidlogin() throws IOException {
+        Properties props = new Properties();
+        props.load(new FileInputStream("src/main/resources/use.properties"));
+        loginField.sendKeys(props.getProperty("negative_user.username"));
+        passwordField.sendKeys(props.getProperty("user.password"));
+        signInButton.shouldBe(visible).click();
+    }
+
+    public void invalidPassword() throws IOException {
+        Properties props = new Properties();
+        props.load(new FileInputStream("src/main/resources/use.properties"));
+        loginField.sendKeys(props.getProperty("user.username"));
+        passwordField.sendKeys(props.getProperty("negative_user.password"));
+        signInButton.shouldBe(visible).click();
+//        Selenide.sleep(2000);
+    }
+
+    public void invalidAll() throws IOException {
+        Properties props = new Properties();
+        props.load(new FileInputStream("src/main/resources/use.properties"));
+        loginField.sendKeys(props.getProperty("negative_user.username"));
+        passwordField.sendKeys(props.getProperty("negative_user.password"));
+        signInButton.shouldBe(visible).click();
+    }
     public void openLoginPage(){
         open("https://opensource-demo.orangehrmlive.com/");
     }

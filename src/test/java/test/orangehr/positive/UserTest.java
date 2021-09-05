@@ -1,4 +1,4 @@
-package test.orangehr;
+package test.orangehr.positive;
 
 import org.junit.jupiter.api.Test;
 

@@ -40,6 +40,7 @@ public class BasePage {
     //    public SelenideElement itemTotal = $(By.className("summary_subtotal_label"));
     public SelenideElement welcomeMessage = $(By.id("welcome"));
     public SelenideElement loginPanelMessage = $(By.id("logInPanelHeading"));
+    public SelenideElement invalidloginMessage = $(By.id("spanMessage"));
     public SelenideElement jobTitleslMessage = $(By.className("head"));
 
 //    public SelenideElement welcomeMessageInCart = $(By.className("title"));
@@ -154,6 +155,9 @@ public class BasePage {
     }
     public void loginPanelMessage() {
         loginPanelMessage.shouldBe(text("LOGIN Panel"));
+    }
+    public void invalidloginMessage() {
+        invalidloginMessage.shouldBe(text("Invalid credentials"));
     }
 
 
