@@ -12,9 +12,6 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class JobTitlePage extends BasePage {
 
-    public static  String SECONDJBOB  ;
-    public static  String FIRSTJOB ;
-    public static  String THIRDJOB;
     SelenideElement jobTitle = $("input[id='jobTitle_jobTitle']");
     SelenideElement jobDescription = $("textarea[id='jobTitle_jobDescription']");
     SelenideElement jobSpecification = $("input[id='jobTitle_jobSpec']");
@@ -74,19 +71,11 @@ public class JobTitlePage extends BasePage {
     public  void checboxAddJobTitle()  throws IOException {
         Properties props = new Properties();
         props.load(new FileInputStream("src/main/resources/use.properties"));
-        FIRSTJOB = props.getProperty("job_first.title");
-        SECONDJBOB = props.getProperty("job_second.title");
-        THIRDJOB = props.getProperty("job_third.title");
-        checbAddJobTitle(FIRSTJOB);
-        checbAddJobTitle(SECONDJBOB);
-        checbAddJobTitle(THIRDJOB);
+        findElementAndClickBox(props.getProperty("job_first.title"));
+        findElementAndClickBox(props.getProperty("job_second.title"));
+        findElementAndClickBox(props.getProperty("job_third.title"));
         buttonDelJobTitle.click();
         buttonYesDelJobTitle.click();
-    }
-
-    public void checbAddJobTitle(String str){
-        SelenideElement checboxAddJobTitle = $((By.xpath("//a[contains(text(),\'" + str + "\')]/ancestor::tr/td[1]/input[@type='checkbox']")));
-        checboxAddJobTitle.click();
     }
 }
 

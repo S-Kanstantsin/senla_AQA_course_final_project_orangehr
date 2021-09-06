@@ -14,7 +14,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class CandidatePage extends BasePage {
 
-    public static  String CANDIDATE ;
+
     SelenideElement buttonAddCandidates = $("input[name='btnAdd']");
     SelenideElement buttonDelCandidates = $("input[name='btnDelete']");
     SelenideElement addFirstName = $(By.id("addCandidate_firstName"));
@@ -82,17 +82,10 @@ public class CandidatePage extends BasePage {
     public  void DeleteCandidate()  throws IOException {
         Properties props = new Properties();
         props.load(new FileInputStream("src/main/resources/use.properties"));
-        CANDIDATE = props.getProperty("delete_user.first_Name");
-        checbDelCandidate(CANDIDATE);
+        findElementAndClickBox(props.getProperty("delete_user.first_Name"));
         buttonDelCandidate.click();
         buttonYesDelCandidate.click();
         tableAddCandidate.shouldNotBe(text("Loki Tor Odin"));
     }
-
-    public void checbDelCandidate(String str){
-        SelenideElement checboxAddJobTitle = $((By.xpath("//a[contains(text(),\'" + str + "\')]/ancestor::tr/td[1]/input[@type='checkbox']")));
-        checboxAddJobTitle.click();
-    }
-
 }
 

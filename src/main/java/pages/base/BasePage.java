@@ -17,13 +17,6 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class BasePage {
 
-    //    public SelenideElement buttonAddToCart = $x("//button[@class='btn btn_primary btn_small btn_inventory']");
-//    public SelenideElement buttonCartLink = $("a[class='shopping_cart_link']");
-//    public SelenideElement buttonCheckout = $("button[id='checkout']");
-//    public SelenideElement buttonFinish = $("button[id='finish']");
-//    public SelenideElement buttonRemove = $("button[id='remove-sauce-labs-backpack']");
-//    public SelenideElement tableInventoryContainer = $(By.id("inventory_container"));
-//    public SelenideElement tableCartList = $(By.className("cart_list"));
     public SelenideElement linkwelcomeMessage = $(By.id("welcome"));
     public SelenideElement linkLogout = $(byText("Logout"));
     public SelenideElement adminLink = $(By.className("firstLevelMenu"));
@@ -34,82 +27,24 @@ public class BasePage {
     public SelenideElement linkCandidates = $("a[id= 'menu_recruitment_viewCandidates']");
     public SelenideElement linkLeave = $("a[id= 'menu_leave_viewLeaveModule']");
     public SelenideElement linkAssignLeave = $("a[id= 'menu_leave_assignLeave']");
+    public SelenideElement linkPIM = $("a[id= 'menu_pim_viewPimModule']");
+    public SelenideElement linkEmployeeList = $("a[id= 'menu_pim_viewEmployeeList']");
+    public SelenideElement linkDashboard = $("a[id= 'menu_dashboard_index']");
 
-
-    //    public SelenideElement itemTotal = $(By.className("summary_subtotal_label"));
     public SelenideElement welcomeMessage = $(By.id("welcome"));
     public SelenideElement loginPanelMessage = $(By.id("logInPanelHeading"));
     public SelenideElement invalidloginMessage = $(By.id("spanMessage"));
     public SelenideElement jobTitleslMessage = $(By.className("head"));
-
-//    public SelenideElement welcomeMessageInCart = $(By.className("title"));
-//    public SelenideElement welcomeMessageYourInformation = $(By.className("title"));
-//    public SelenideElement welcomeMessageOverview = $(By.className("title"));
-//    public SelenideElement welcomeMessageComplete = $(By.className("title"));
+    public SelenideElement dashboardMessage = $("div[class= 'head']");
 
 
-    //    public void buttonAddToCart() {
-//        buttonAddToCart.shouldBe(visible).click();
-//    }
-//
-//    public void tableInventoryContainer() {
-//        tableInventoryContainer.shouldBe(visible);
-//        ElementsCollection buttonsAddToCartCollection = tableInventoryContainer.$$("button");
-//        for (SelenideElement item : buttonsAddToCartCollection)
-//            item.click();
-//    }
-//
-//    public void tableCartList() {
-//        tableCartList.shouldBe(visible);
-//        ElementsCollection buttonsRemove = tableCartList.$$("button");
-//        for (SelenideElement item : buttonsRemove)
-//            item.click();
-//    }
-//
-//    public void tableCartListOverview() {
-//        tableCartListOverview.shouldBe(visible);
-//        ElementsCollection sumPrice = tableCartListOverview.$$(".inventory_item_price");
-//        ArrayList<Float> prises = new ArrayList<>();
-//
-//        for (SelenideElement item : sumPrice) {
-//            prises.add(Stream.of(item.getOwnText().replaceAll("\\$", ""))
-//                    .map(s -> s.substring(1))
-//                    .map(s -> s.replace(",", "."))
-//                    .map(Float::parseFloat)
-//                    .reduce(0f, Float::sum));
-//
-//        }
-//        double sum = prises.stream()
-//                .mapToDouble(a -> a)
-//                .sum();
-//        System.out.println(sum);
-//        String total = itemTotal.getOwnText().replaceAll("\\$", "")
-//                .replaceAll("Item total:", "");
-//        double iTemTotal = Double.parseDouble(total);
-//        System.out.println(AssertTrue(iTemTotal == sum));
-//
-//
-//    }
-//
-//    private boolean AssertTrue(boolean b) {
-//        return b;
-//    }
-//
-//
-//    public void buttonCartLink() {
-//        buttonCartLink.shouldBe(visible).click();
-//    }
-//
-//    public void buttonCheckout() {
-//        buttonCheckout.shouldBe(visible).click();
-//    }
-//
-//    public void buttonFinish() {
-//        buttonFinish.shouldBe(visible).click();
-//    }
-//
     public void linkwelcomeMessage() {
         linkwelcomeMessage.click();
+    }
+
+    public void linkEmployeeList() {
+        linkPIM.click();
+        linkEmployeeList.click();
     }
 
     public void linkLogout() {
@@ -144,13 +79,12 @@ public class BasePage {
         linkAssignLeave.click();
 
     }
-//
-//
-//    public void buttonNotRemove() {
-//        buttonRemove.shouldNotBe(visible);
-//
-//    }
-//
+
+    public void linkDashboard() {
+        linkDashboard.click();
+        dashboardMessage.shouldBe(text("Dashboard"));
+
+    }
 
     public void welcomeMessage() {
         welcomeMessage.shouldBe(text("Welcome "));
@@ -163,7 +97,6 @@ public class BasePage {
     public void invalidloginMessage() {
         invalidloginMessage.shouldBe(text("Invalid credentials"));
     }
-
 
 
     public void findElementAndClickBox(String str) {
@@ -179,30 +112,4 @@ public class BasePage {
     public SelenideElement findFourthColumnElement(String str) {
         return $(By.xpath("//a[contains(text(),\'" + str + "\')]/ancestor::tr/td[4]/a"));
     }
-//    public void welcomeMessageInCart() {
-//        welcomeMessageInCart.shouldBe(text("YOUR CART"));
-//    }
-//
-//    public void welcomeMessageYourInformation() {
-//        welcomeMessageYourInformation.shouldBe(text("CHECKOUT: YOUR INFORMATION"));
-//    }
-//
-//    public void welcomeMessageOverview() {
-//        welcomeMessageOverview.shouldBe(text("CHECKOUT: OVERVIEW"));
-//    }
-//
-//    public void welcomeMessageComplete() {
-//        welcomeMessageComplete.shouldBe(text("CHECKOUT: COMPLETE!"));
-//    }
-//
-//    public void messageButtonRemove() {
-//        buttonRemove.shouldBe(text("REMOVE"));
-//    }
-//
-//
-//    public void messageButtonAddToCart() {
-//        buttonAddToCart.shouldBe(text("ADD TO CART"));
-//    }
-//
-
-    }
+}

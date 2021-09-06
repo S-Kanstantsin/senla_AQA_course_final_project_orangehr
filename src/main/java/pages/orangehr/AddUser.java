@@ -15,7 +15,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class AddUser extends BasePage {
 
-    public static  String ADDUSER;
+
     SelenideElement adduserRole = $(By.id("systemUser_userType"));
     SelenideElement employeeName = $("input[id = 'systemUser_employeeName_empName']");
 
@@ -54,18 +54,9 @@ public class AddUser extends BasePage {
     public  void deleteUser()  throws IOException {
         Properties props = new Properties();
         props.load(new FileInputStream("src/main/resources/use.properties"));
-        ADDUSER = props.getProperty("new_user.username");
-        checbDelUser(ADDUSER);
+        findElementAndClickBox(props.getProperty("new_user.username"));
         buttonDelUser.click();
         buttonYesDelUser.click();
         tableUser.shouldNotBe(text(props.getProperty("new_user.name")));
     }
-
-    public void checbDelUser(String str){
-        SelenideElement checboxAddJobTitle = $((By.xpath("//a[contains(text(),\'" + str + "\')]/ancestor::tr/td[1]/input[@type='checkbox']")));
-        checboxAddJobTitle.click();
-    }
-
-
-
 }
