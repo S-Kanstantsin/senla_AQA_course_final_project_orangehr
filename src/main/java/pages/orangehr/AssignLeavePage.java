@@ -64,14 +64,13 @@ public class AssignLeavePage extends BasePage {
         addHalfDays.shouldBe(text(props.getProperty("duration_Days")));
         addTimeOfDay.shouldBe(visible).selectOption((props.getProperty("duration_TimeOfDay")));
         addTimeOfDay.shouldBe(text(props.getProperty("duration_TimeOfDay")));
-
         addComment.sendKeys(props.getProperty("user.Comment"));
         addComment.should(exist).setValue(props.getProperty("user.Comment"));
         assignAssignLeavePage.shouldBe(visible).click();
-        oKAssignLeavePage.shouldBe(visible).click();
+//        oKAssignLeavePage.shouldBe(visible).click();
         leave_Balance.shouldBe(visible.text(props.getProperty("leave_Balance")));
-        assignAssignLeavePage.shouldBe(visible).click();
-        assignLeavelMessage.shouldBe(text("Overlapping Leave Requests Found"));
+//        assignAssignLeavePage.shouldBe(visible).click();
+//        assignLeavelMessage.shouldBe(text("Overlapping Leave Requests Found"));
     }
 
 
