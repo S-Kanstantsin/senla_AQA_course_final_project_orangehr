@@ -18,10 +18,7 @@ public class DashboardPageTest extends BasesTest {
     @Description("Checking presence of elements page test")
     @Test
     public void dashboardPageTest() throws IOException {
-        LoginPage loginPage = new LoginPage();
         DashboardPage findDashboard = new DashboardPage();
-        loginPage.openLoginPage();
-        loginPage.login();
         findDashboard.comparisonQuickLaunch();
         findDashboard.comparisonImgQuickLaunch();
         findDashboard.comparisonTablePage();

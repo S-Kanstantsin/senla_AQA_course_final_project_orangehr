@@ -19,12 +19,8 @@ public class JobTitleTest extends BasesTest {
     @Description("Adding job title test")
     @Test
     public void addJobTitleTest() throws IOException {
-        LoginPage loginPage = new LoginPage();
         JobTitlePage jobsTitlePage = new JobTitlePage();
-        loginPage.openLoginPage();
-        loginPage.login();
-        loginPage.welcomeMessage();
-        loginPage.adminLink();
+        jobsTitlePage.adminLink();
         jobsTitlePage.linkJob();
         jobsTitlePage.linkJobTitle();
         jobsTitlePage.buttonAddJobTitle();

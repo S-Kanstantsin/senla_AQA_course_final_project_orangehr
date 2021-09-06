@@ -6,20 +6,19 @@ import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.Test;
 import pages.orangehr.AssignLeavePage;
-import pages.orangehr.LoginPage;
+
+import test.base.BasesTest;
+
 import java.io.IOException;
 
-public class AssignLeaveTest {
+public class AssignLeaveTest extends BasesTest {
 
     @Feature("CandidatePage")
     @Severity(SeverityLevel.NORMAL)
     @Description("Adding a candidate")
     @Test
     public void addAssignLeaveTest() throws IOException {
-        LoginPage loginPage = new LoginPage();
         AssignLeavePage addAssign = new AssignLeavePage();
-        loginPage.openLoginPage();
-        loginPage.login();
         addAssign.linkAssignLeave();
         addAssign.addAssignLeave();
     }

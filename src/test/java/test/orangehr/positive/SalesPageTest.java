@@ -19,10 +19,7 @@ public class SalesPageTest extends BasesTest {
     @Description("Checking the form test")
     @Test
     public void shouldElementPersonalDetails() throws IOException {
-        LoginPage loginPage = new LoginPage();
         SalesPage natan = new SalesPage();
-        loginPage.openLoginPage();
-        loginPage.login();
         natan.linkEmployeeList();
         natan.goToPagePersonalDetails();
         natan.shouldElementPersonalDetails();

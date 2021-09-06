@@ -1,9 +1,12 @@
 package test.orangehr.positive;
 
+import com.codeborne.selenide.Configuration;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import pages.orangehr.LoginPage;
@@ -13,8 +16,14 @@ import test.base.BasesTest;
 
 import java.io.IOException;
 
-public class LoginTest extends BasesTest {
+import static com.codeborne.selenide.Selenide.closeWebDriver;
 
+public class LoginTest  {
+
+    @BeforeEach
+    public void setUp() {
+        Configuration.startMaximized = true;
+    }
     @Feature("Login")
     @Severity(SeverityLevel.BLOCKER)
     @Description("Login test")
@@ -38,5 +47,10 @@ public class LoginTest extends BasesTest {
         loginPage.linkwelcomeMessage();
         loginPage.linkLogout();
         loginPage.loginPanelMessage();
+    }
+
+    @AfterEach
+    public void tearDown() {
+        closeWebDriver();
     }
 }

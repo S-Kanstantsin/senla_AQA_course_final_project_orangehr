@@ -26,10 +26,7 @@ public class CandidatePageTest extends BasesTest {
     @Order(1)
     @Test
     public void addCandidateTest() throws IOException {
-        LoginPage loginPage = new LoginPage();
         CandidatePage addCandidate = new CandidatePage();
-        loginPage.openLoginPage();
-        loginPage.login();
         addCandidate.pathToCandidates();
         addCandidate.addCandidate();
     }
@@ -40,10 +37,7 @@ public class CandidatePageTest extends BasesTest {
     @Order(2)
     @Test
     public void deleteCandidateTest() throws IOException {
-        LoginPage loginPage = new LoginPage();
         CandidatePage deleteCandidate = new CandidatePage();
-        loginPage.openLoginPage();
-        loginPage.login();
         deleteCandidate.pathToCandidates();
         deleteCandidate.addDeleteCandidate();
         deleteCandidate.DeleteCandidate();

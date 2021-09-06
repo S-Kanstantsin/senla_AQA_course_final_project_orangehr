@@ -25,16 +25,11 @@ public class UserTest extends BasesTest {
     @Order(1)
     @Test
     public void addUserTest() throws IOException {
-        LoginPage loginPage = new LoginPage();
         AddUser addUser = new AddUser();
-        loginPage.openLoginPage();
-        loginPage.login();
-        loginPage.welcomeMessage();
-        loginPage.adminLink();
-        loginPage.buttonAddSystemUser();
+        addUser.adminLink();
+        addUser.buttonAddSystemUser();
         addUser.addUser();
     }
-
 
     @Feature("User")
     @Severity(SeverityLevel.CRITICAL)
@@ -42,12 +37,8 @@ public class UserTest extends BasesTest {
     @Order(2)
     @Test
     public void deleteUserTest() throws IOException {
-        LoginPage loginPage = new LoginPage();
         AddUser deleteUser = new AddUser();
-        loginPage.openLoginPage();
-        loginPage.login();
-        loginPage.welcomeMessage();
-        loginPage.adminLink();
+        deleteUser.adminLink();
         deleteUser.deleteUser();
     }
 
